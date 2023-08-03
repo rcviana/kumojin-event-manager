@@ -1,9 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from '@testing-library/react';
 import App from '../App'
 
-it('shows an event form', () => {
-    const div = document.create('div')
-    ReactDOM.render(<App />, div)
-    ReactDOM.unmountComponentAtNode(div)
+it('shows the event form', () => {
+    const { getByText } = render(<App />)
+    expect(getByText('Create an event')).toBeTruthy();
+    expect(getByText('Name')).toBeTruthy();
+    expect(getByText('Description')).toBeTruthy();
+    expect(getByText('Starts at:')).toBeTruthy();
+    expect(getByText('Ends at:')).toBeTruthy();
 })
