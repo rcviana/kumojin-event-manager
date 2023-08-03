@@ -1,1 +1,1 @@
-# kumojin-event-manager
+# Application de gestion d’événements
